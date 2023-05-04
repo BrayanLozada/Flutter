@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:perro_bloc_formz/Models/perro_repository.dart';
-import 'package:perro_bloc_formz/bloc/perro_bloc.dart';
+import 'package:perro_bloc_formz/bloc_perro/perro_bloc.dart';
 import 'package:perro_bloc_formz/ui/agregar_perro.dart';
 
 void main() {
@@ -10,34 +10,35 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  final String title = 'App de Agregar nombre perros';
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:  MyHomePage(title: title),
+
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({super.key, required this.title});
 
+  final PerrosRepository _perrosRepository = PerrosRepository();
   final String title;
-  // final perrosBloc = PerrosBloc(perrosRepository: PerrosRepository());
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PerrosBloc>(
-          create: (_) => PerrosBloc(perrosRepository: PerrosRepository()),
+          create: (_) => PerrosBloc(perrosRepository: _perrosRepository)
+          ..add(ObtenerPerro())
         ),
-       
       ],
       child: const AgregarPerroForm(),
     );
