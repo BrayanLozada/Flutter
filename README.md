@@ -1,12 +1,8 @@
 # perro_bloc_formz
-#Español
-Proyecto de flutter de una aplicación sencilla.
-Un formulario con un solo campo para agregar la datos a la clase perro, usando el patrón de diseño BloC.
-
-
-#English
-Flutter project of a simple app.
-A form with a single field to add the data to the dog class, using the BloC design pattern.
+##Este proyecto es una aplicación flutter simple.
+Su función es agregar nombres de perros mediante un formulario
+Usando como gestor de estados a BLoC
+se conecta a una base de datos para agregar y para listar el nombre de los perros.
 
 ## Getting Started
 
