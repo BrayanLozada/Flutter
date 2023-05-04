@@ -1,8 +1,10 @@
 # perro_bloc_formz
 ## Aplicación flutter simple.
-Su función es agregar nombres de perros mediante un formulario /n
-Usando como gestor de estados a BLoC
-se conecta a una base de datos para agregar y para listar el nombre de los perros.
+Su función es agregar nombres de perros mediante un formulario.
+
+Usando como gestor de estados a BLoC.
+
+Se conecta a una base de datos para agregar y para listar el nombre de los perros.
 
 ## Getting Started
 
